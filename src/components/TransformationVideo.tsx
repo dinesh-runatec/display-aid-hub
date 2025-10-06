@@ -45,8 +45,8 @@ const TransformationVideo = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto max-w-6xl">
+    <section className="py-20 bg-gradient-to-b from-background to-muted/30 overflow-hidden">
+      <div className="container mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
@@ -63,15 +63,16 @@ const TransformationVideo = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Carousel */}
-          <Carousel
-            opts={{ align: "start", loop: true }}
-            plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
-            className="w-full max-w-2xl mx-auto lg:mx-0"
-          >
+          <div className="w-full -mx-4 px-4 lg:mx-0 lg:px-0">
+            <Carousel
+              opts={{ align: "center", loop: true, containScroll: "trimSnaps" }}
+              plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
+              className="w-full"
+            >
             <CarouselContent>
               {transformations.map((item, index) => (
-                <CarouselItem key={index}>
-                  <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl">
+                <CarouselItem key={index} className="pl-4">
+                  <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl mx-auto max-w-lg lg:max-w-none">
                     <CardContent className="p-0">
                       {/* Before/After Comparison */}
                       <div className="relative">
@@ -120,9 +121,10 @@ const TransformationVideo = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-1 sm:left-2 h-8 w-8 sm:h-10 sm:w-10" />
-            <CarouselNext className="right-1 sm:right-2 h-8 w-8 sm:h-10 sm:w-10" />
+            <CarouselPrevious className="left-2 sm:left-4 h-8 w-8 sm:h-10 sm:w-10 bg-background/90 hover:bg-background border-2" />
+            <CarouselNext className="right-2 sm:right-4 h-8 w-8 sm:h-10 sm:w-10 bg-background/90 hover:bg-background border-2" />
           </Carousel>
+          </div>
 
           {/* Highlights */}
           <div className="space-y-6">
