@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Comparison from "@/components/Comparison";
-import BeforeAfter from "@/components/BeforeAfter";
 import TransformationVideo from "@/components/TransformationVideo";
 import Pricing from "@/components/Pricing";
 import Benefits from "@/components/Benefits";
@@ -18,7 +17,6 @@ const Index = () => {
         <Hero />
         <Features />
         <Comparison />
-        <BeforeAfter />
         <TransformationVideo />
         <Benefits />
         <Pricing />

@@ -66,7 +66,7 @@ const TransformationVideo = () => {
           <Carousel
             opts={{ align: "start", loop: true }}
             plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
-            className="w-full"
+            className="w-full max-w-2xl mx-auto lg:mx-0"
           >
             <CarouselContent>
               {transformations.map((item, index) => (
@@ -83,8 +83,8 @@ const TransformationVideo = () => {
                               alt={`${item.title} - Before`}
                               className="w-full h-full object-cover"
                             />
-                            <div className="absolute top-4 left-4">
-                              <span className="bg-destructive/90 backdrop-blur-sm text-destructive-foreground px-3 py-1 rounded-full text-xs font-bold">
+                            <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
+                              <span className="bg-destructive/90 backdrop-blur-sm text-destructive-foreground px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold">
                                 BEFORE
                               </span>
                             </div>
@@ -96,32 +96,32 @@ const TransformationVideo = () => {
                               alt={`${item.title} - After`}
                               className="w-full h-full object-cover"
                             />
-                            <div className="absolute top-4 right-4">
-                              <span className="bg-primary/90 backdrop-blur-sm text-primary-foreground px-3 py-1 rounded-full text-xs font-bold">
+                            <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
+                              <span className="bg-primary/90 backdrop-blur-sm text-primary-foreground px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold">
                                 AFTER
                               </span>
                             </div>
                           </div>
                         </div>
                         {/* Center Divider */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-1 bg-gradient-to-b from-destructive via-background to-primary" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background border-4 border-primary rounded-full p-2 shadow-lg">
-                          <ArrowRight className="w-6 h-6 text-primary" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-0.5 sm:w-1 bg-gradient-to-b from-destructive via-background to-primary" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background border-2 sm:border-4 border-primary rounded-full p-1 sm:p-2 shadow-lg">
+                          <ArrowRight className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
                         </div>
                       </div>
                       
                       {/* Info Bar */}
-                      <div className="p-4 bg-card">
-                        <h4 className="font-semibold text-lg mb-1">{item.title}</h4>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                      <div className="p-3 sm:p-4 bg-card">
+                        <h4 className="font-semibold text-base sm:text-lg mb-1">{item.title}</h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{item.description}</p>
                       </div>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
+            <CarouselPrevious className="left-1 sm:left-2 h-8 w-8 sm:h-10 sm:w-10" />
+            <CarouselNext className="right-1 sm:right-2 h-8 w-8 sm:h-10 sm:w-10" />
           </Carousel>
 
           {/* Highlights */}
@@ -170,24 +170,88 @@ const TransformationVideo = () => {
         </div>
 
         {/* Stats Bar */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { number: "10,000+", label: "Repairs Completed" },
-            { number: "98%", label: "Success Rate" },
-            { number: "4.9★", label: "Customer Rating" },
-            { number: "30 Min", label: "Average Time" },
-          ].map((stat, index) => (
-            <Card key={index} className="text-center hover:scale-105 transition-transform duration-300">
-              <CardContent className="p-6">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
+        <div className="mt-16 space-y-8">
+          <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Our Track Record</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Trusted by thousands of customers across the region for professional mobile repair services
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { 
+                number: "10,000+", 
+                label: "Repairs Completed",
+                description: "Successfully restored devices since 2018"
+              },
+              { 
+                number: "98%", 
+                label: "Success Rate",
+                description: "First-time fix guarantee on all repairs"
+              },
+              { 
+                number: "4.9★", 
+                label: "Customer Rating",
+                description: "Based on 2,500+ verified reviews"
+              },
+              { 
+                number: "30 Min", 
+                label: "Average Time",
+                description: "Quick turnaround for most repairs"
+              },
+            ].map((stat, index) => (
+              <Card 
+                key={index} 
+                className="text-center hover:scale-105 hover:shadow-lg transition-all duration-300 border-primary/20"
+              >
+                <CardContent className="p-4 sm:p-6">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-xs sm:text-sm font-semibold mb-2">
+                    {stat.label}
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground leading-tight">
+                    {stat.description}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Additional Trust Indicators */}
+          <div className="grid md:grid-cols-3 gap-4 mt-8">
+            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <CardContent className="p-6 text-center">
+                <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold mb-2">Certified Technicians</h4>
+                <p className="text-sm text-muted-foreground">
+                  All our technicians are factory-trained and certified professionals
+                </p>
               </CardContent>
             </Card>
-          ))}
+            
+            <Card className="bg-gradient-to-br from-secondary/5 to-secondary/10 border-secondary/20">
+              <CardContent className="p-6 text-center">
+                <CheckCircle2 className="w-8 h-8 text-secondary mx-auto mb-3" />
+                <h4 className="font-semibold mb-2">Quality Guarantee</h4>
+                <p className="text-sm text-muted-foreground">
+                  We stand behind our work with comprehensive warranty coverage
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gradient-to-br from-primary/5 to-secondary/10 border-primary/20">
+              <CardContent className="p-6 text-center">
+                <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold mb-2">Same-Day Service</h4>
+                <p className="text-sm text-muted-foreground">
+                  Most repairs completed within 30 minutes while you wait
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
