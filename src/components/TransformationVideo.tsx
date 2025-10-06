@@ -63,16 +63,16 @@ const TransformationVideo = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Carousel */}
-          <div className="w-full -mx-4 px-4 lg:mx-0 lg:px-0">
+          <div className="w-full">
             <Carousel
               opts={{ align: "center", loop: true, containScroll: "trimSnaps" }}
               plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
               className="w-full"
             >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {transformations.map((item, index) => (
-                <CarouselItem key={index} className="pl-4">
-                  <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl mx-auto max-w-lg lg:max-w-none">
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] sm:basis-[85%] md:basis-full">
+                  <Card className="overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl">
                     <CardContent className="p-0">
                       {/* Before/After Comparison */}
                       <div className="relative">

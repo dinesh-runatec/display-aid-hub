@@ -265,8 +265,8 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="py-20 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
+    <section id="pricing" className="py-20 bg-muted/30 overflow-hidden">
+      <div className="container mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full mb-4">
@@ -330,13 +330,13 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Pricing Cards - Scrollable on mobile */}
-        <div className="relative">
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+        {/* Pricing Cards */}
+        <div className="w-full">
+          <div className="flex flex-nowrap lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent -mx-4 px-4">
             {brandPricing[selectedBrand].map((category) => (
               <Card
                 key={category.title}
-                className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl snap-center min-w-[280px] sm:min-w-0"
+                className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl snap-center flex-shrink-0 w-[85vw] sm:w-[75vw] md:w-[45vw] lg:w-auto"
               >
               <CardContent className="p-4 sm:p-6">
                 {/* Category Header */}
