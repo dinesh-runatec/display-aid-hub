@@ -1,0 +1,15 @@
+Brand,Category,Models,DisplayType,Price,Warranty,Highlight
+iphone,iPhone 4 - 5S Series,4|4S|5|5C|5S|SE 2016,Standard,1300,Standard,false
+iphone,iPhone 4 - 5S Series,4|4S|5|5C|5S|SE 2016,Warranty,1800,6 Months,false
+iphone,iPhone 4 - 5S Series,4|4S|5|5C|5S|SE 2016,Original,3500,1 Year,true
+iphone,iPhone 6 - 7 Plus Series,6|6S|7|7 Plus,Standard,1500,Standard,false
+iphone,iPhone 6 - 7 Plus Series,6|6S|7|7 Plus,Warranty,2000,6 Months,false
+iphone,iPhone 6 - 7 Plus Series,6|6S|7|7 Plus,Original,3500,1 Year,true
+samsung,Premium A & M Series,A20|A30|A50|M30|M30S|M21,LCD,1200,Standard,false
+samsung,Premium A & M Series,A20|A30|A50|M30|M30S|M21,LED,2400,6 Months,false
+xiaomi,Redmi Note Series,Note 9|Note 10|Note 11|Note 12,LCD,1100,Standard,false
+xiaomi,Redmi Note Series,Note 9|Note 10|Note 11|Note 12,AMOLED,2200,6 Months,false
+vivo,Y75 Series,Y75 4G|Y75 5G,LCD,1400,Standard,false
+vivo,Y75 Series,Y75 4G|Y75 5G,Warranty,1900,6 Months,false
+vivo,Y75 Series,Y75 4G|Y75 5G,LED,3000,Standard,false
+vivo,Y75 Series,Y75 4G|Y75 5G,Original,4500,1 Year,true
